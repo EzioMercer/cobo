@@ -1,0 +1,25 @@
+{
+  "name": "cobo",
+  "version": "0.0.2",
+  "description": "CoBo - Colorful Border",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EzioMercer/cobo.git"
+  },
+  "keywords": [
+    "color",
+    "colorful",
+    "border",
+    "light"
+  ],
+  "author": "Rovshan Badirkhanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EzioMercer/cobo/issues"
+  },
+  "homepage": "https://github.com/EzioMercer/cobo#readme"
+}
