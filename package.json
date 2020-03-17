@@ -1,8 +1,8 @@
 {
   "name": "cobo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CoBo - Colorful Border",
-  "main": "index.js",
+  "main": "cobo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
