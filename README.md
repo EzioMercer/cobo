@@ -8,22 +8,25 @@ npm install cobo --save
 
 ## Usage
 
-Just include `cobo.js` into your project and add class `cobo` to img element
+Just include `cobo.js` for test purposes or insert script `cobo.min.js` for production into your project then add class `cobo` to img element
 
 ## Example
 
-Insert script `cobo.js` inside the `head` element of your HTML file:
+Insert script `cobo.min.js` inside the `head` element of your HTML file:
 
 ```
 <head>
-    <title>Document</title>
-    <script src="cobo.js"></script>
+    <title>CoBo</title>
+    <script src="cobo.min.js"></script>
 </head>
 ```
 
-and add class `cobo` to img element:
+then add class `cobo-static` or `cobo-hover` to img element:
+
 ```
-<img class="cobo" src="/path/to/image">
+<img class="cobo-static" src="/path/to/image">
 ```
 
-and see the MAGIC
+```
+<img class="cobo-hover" src="/path/to/image">
+```
