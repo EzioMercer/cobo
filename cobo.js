@@ -14,12 +14,8 @@ window.onload = () => {
 
 			} else if(img.classList.contains('cobo-hover')){
 
-				img.onmouseover = () => {
-					img_bg.style.filter = "blur(8px)";
-				};
-				img.onmouseout = () => {
-					img_bg.style.filter = "blur(0px)";
-				};
+				img.onmouseover = () => img_bg.style.filter = "blur(8px)";
+				img.onmouseout = () => img_bg.style.filter = "blur(0px)";
 
 			}
 

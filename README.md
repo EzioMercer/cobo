@@ -8,7 +8,7 @@ npm install cobo --save
 
 ## Usage
 
-Just include `cobo.js` for test purposes or insert script `cobo.min.js` for production into your project then add class `cobo` to img element
+Just include `cobo.js` for test purposes or insert script `cobo.min.js` for production into your project and then add `cobo's` classes to img element
 
 ## Example
 
