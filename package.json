@@ -1,6 +1,6 @@
 {
   "name": "cobo",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "CoBo - Colorful Border",
   "main": "cobo.js",
   "scripts": {
@@ -11,10 +11,18 @@
     "url": "git+https://github.com/EzioMercer/cobo.git"
   },
   "keywords": [
+    "blur",
+    "blurred",
+    "border",
     "color",
     "colorful",
-    "border",
-    "light"
+    "dom",
+    "filter",
+    "html",
+    "img",
+    "image",
+    "light",
+    "shadow"
   ],
   "author": "Rovshan Badirkhanov",
   "license": "ISC",
