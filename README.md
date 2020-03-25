@@ -1,5 +1,5 @@
 # cobo
-CoBo - Colorful Border
+**Co**lorful **Bo**rder
 
 ## Install
 ```
@@ -8,25 +8,54 @@ npm install cobo --save
 
 ## Usage
 
-Just include `cobo.js` for test purposes or insert script `cobo.min.js` for production into your project and then add `cobo's` classes to img element
+This package contains two files:
+
+ * `cobo.js` -- unminified version for development purposes
+ * `cobo.min.js` -- minified production-ready version
+
+Just include either of those files and import `Cobo` in your code.
+
+`Cobo` offers two modes: `static` (default) and `hover`. To activate static mode, you need to call it without any parameters in your image initialization function:
+
+```
+Cobo()
+```
+
+To activate `hover` mode, you need to pass an object with parameter `hoverMode` set to `true`: 
+
+```
+Cobo({hoverMode: true})
+```
+
+Calling `Cobo({hoverMode: false})` is equal to calling `Cobo` without any parameters at all.
 
 ## Example
 
-Insert script `cobo.min.js` inside the `head` element of your HTML file:
+Insert script `test.js` inside the `head` element of your HTML file as module:
 
 ```
 <head>
     <title>CoBo</title>
-    <script src="cobo.min.js"></script>
+    <script type="module" src="test.js"></script>
 </head>
 ```
 
-then add class `cobo-static` or `cobo-hover` to img element:
+Import `Cobo` from `cobo.min.js` in the file `test.js` 
 
 ```
-<img class="cobo-static" src="/path/to/image">
+import Cobo from './cobo.min.js';
 ```
 
+then set onload function of the image like shown below:
+
 ```
-<img class="cobo-hover" src="/path/to/image">
+var img = document.createElement('img');
+
+img.src = "/path/to/image";
+img.onload = () => Cobo({hoverMode: true});
+
+document.body.appendChild(img);
 ```
+
+## License
+ISC

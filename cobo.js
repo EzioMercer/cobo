@@ -1,26 +1,29 @@
-window.onload = () => {
-	Array.from(document.querySelectorAll("img[class~=cobo-static], img[class~=cobo-hover]")).forEach(
-		(img) => {
-			let
-				div = document.createElement('div'),
-				img_bg = img.cloneNode(true);
+export default ({hoverMode = false} = {}) => {
 
-			img.replaceWith(div);
-			div.appendChild(img);
+	if(typeof hoverMode !== 'boolean') throw new TypeError('hoverMode must be boolean type');
+	if(event.target.tagName !== 'IMG') throw new Error('Element is not IMG');
 
-			if(img.classList.contains('cobo-static')){
+	var
+		img = event.target,
+		div = document.createElement('div'),
+		img_bg = img.cloneNode(true);
 
-				img_bg.style.filter = "blur(8px)";
+	img.replaceWith(div);
+	div.appendChild(img);
 
-			} else if(img.classList.contains('cobo-hover')){
+	if(hoverMode){
+		
+		img.onmouseover = () => img_bg.style.filter = 'blur(8px)';
+		img.onmouseout = () => img_bg.style.filter = 'blur(0px)';
 
-				img.onmouseover = () => img_bg.style.filter = "blur(8px)";
-				img.onmouseout = () => img_bg.style.filter = "blur(0px)";
+	} else {
+		
+		img_bg.style.filter = 'blur(8px)';
+		
+	}
 
-			}
-
-			div.appendChild(img_bg);
-			img.style.position = 'absolute';
-			img.style.zIndex = '1';
-		});
+	div.appendChild(img_bg);
+	img.style.position = 'absolute';
+	img.style.zIndex = '1';
+		
 };
