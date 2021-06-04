@@ -25,7 +25,7 @@
     "shadow"
   ],
   "author": "Rovshan Badirkhanov",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/EzioMercer/cobo/issues"
   },
