@@ -15,25 +15,53 @@ This package contains two files:
 
 Just include either of those files and import `Cobo` in your code.
 
-`Cobo` offers two modes: `static` (default) and `hover`. To activate static mode, you need to call it without any parameters in your image initialization function:
-
+```js
+/**
+ * @param {HTMLImageElement} img - Required
+ * @param {boolean} [hoverMode] - Optional
+ * @param {number} [borderSize] - Optional
+ */
+Cobo({
+    img,
+    hoverMode: false,
+    borderSize: 8
+});
 ```
-Cobo()
+
+`Cobo` offers two modes: `static` (default) and `hover`. To activate `static` mode,
+you just need to pass an `HTMLImageElement` in image initialization function:
+
+```js
+Cobo({
+    img: e.target
+})
 ```
 
-To activate `hover` mode, you need to pass an object with parameter `hoverMode` set to `true`: 
+To activate `hover` mode, you need to pass a `hoverMode` parameter too and set to `true`: 
 
-```
-Cobo({hoverMode: true})
+```js
+Cobo({
+    img: e.target,
+    hoverMode: true
+})
 ```
 
-Calling `Cobo({hoverMode: false})` is equal to calling `Cobo` without any parameters at all.
+To control border size you need to pass `borderSize` parameter
+
+```js
+Cobo({
+    img: e.target,
+    borderSize: 32
+})
+```
+
+Calling `Cobo({img: e.target, hoverMode: false})` is equal to calling `Cobo` in `static` mode.
 
 ## Example
 
-Insert script `test.js` inside the `head` element of your HTML file as module:
+Insert script `test.js` inside the `head` element of your `index.html` file as module:
 
-```
+```html
 <head>
     <title>CoBo</title>
     <script type="module" src="test.js"></script>
@@ -42,17 +70,21 @@ Insert script `test.js` inside the `head` element of your HTML file as module:
 
 Import `Cobo` from `cobo.min.js` in the file `test.js` 
 
-```
+```js
 import Cobo from './cobo.min.js';
 ```
 
 then set onload function of the image like shown below:
 
-```
-var img = document.createElement('img');
+```js
+const img = document.createElement('img');
 
 img.src = "/path/to/image";
-img.onload = () => Cobo({hoverMode: true});
+img.onload = (e) => Cobo({
+    img: e.target,
+    hoverMode: true,
+    borderSize: 16
+});
 
 document.body.appendChild(img);
 ```
